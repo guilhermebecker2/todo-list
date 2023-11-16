@@ -1,38 +1,144 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button {
+  background-color: #4CAF50; /* Green */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.task-title-organizer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 0;
+  height: 70%;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.task-title {
+  font-size: 1.7svh;
+  height: 50%;
+  margin-bottom: 0;
+}
+
+.timestamp {
+  font-size: 1.3svh;
+  display: flex;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  background-color: #ecedf6;
+  padding: 1.7vh;
+  border-radius: 0.9vh;
+}
+
+
+.card {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content:space-between;
+  line-height: normal;
+  width: 70vh;
+  height: 5vh;
+  line-height: 4vh;
+  margin-bottom: 1.5vh;
+  border-radius: 0.5vh;
+}
+
+.checkbox {
+  width: 1.3vh;
+}
+
+.header {
+  font-size: medium;
+  width: 73vh;
+}
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8vh;
+  margin-bottom: 1svh;
+  width: 73vh;
+}
+
+.button1 {
+  background-color: #646ff0;
+  color: white;
+  font-size: 1.5svh;
+  cursor: pointer;
+  border: #ecedf6;
+  border-radius: 1svh;
+  height: 3vh;
+  width: 9.5vh;
+
+}
+
+.reference {
+  font-size: 1.5svh;
+  border-radius: 1svh;
+  width: 12vh;
+}
+
+.left-buttons {
+  width: 12vh;
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-button {
+  font-size: 1.5svh;
+  border-radius: 1svh;
+  height: 2.5svh;
+  margin: auto;
+  cursor: pointer;
+}
+
+.new-task {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: rgba(31, 31, 46, 0.119);
+  margin-top: 2svh;
+  width: 40vh;
+  height: 25vh;
 }
 
-.App-link {
-  color: #61dafb;
+.new-task-title{
+  font-size: 1.6svh;
+  width: 40vh;
+  display: flex;
+  justify-content: left;
+  margin-bottom: 2svh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-name{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.5svh;
+
+}
+.title-input{
+  width: 35vh;
+  height: 3vh;
+  font-size:1.4svh;
+  margin-bottom: 1svh;
+}
+
+.title-button{
+  width: 20vh;
+  display: flex;
+  justify-content:space-between;
+  margin-top: 4vh;
+}
+
+.button-position{
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
 }

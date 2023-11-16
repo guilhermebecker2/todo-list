@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Components/AppHeader'
+import Tasks from './Components/AppTask'
+import NewTask from './Components/AddTask'
+import { useState } from 'react'
+import EditTask from './Components/EditTask'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  return <AppStructure />
 }
 
-export default App;
+function AppStructure() {
+  const [filter, setFilter] = useState('All')
+  const [addTask, setAddTask] = useState(false)
+  const [editTask, setEditTask] = useState(false)
+  const [taskIndex, setTaskIndex] = useState('')
+  const [updatedEditTask, setUpdatedEditTask] = useState(false)
+  
+
+  const testList = [
+    { id:0, title: 'Learn react', status: 'Incomplete' },
+    { id:1, title: 'Iterate lists', status: 'Incomplete' },
+    { id:2, title: 'Deal with arrays', status: 'Incomplete' },
+    { id:3, title: 'Run 18km', status: 'Complete' }]
+
+    const [taskList, setTaskList] = useState(testList)
+
+    console.log("precisa de atualização? "+updatedEditTask)
+
+
+  return (
+    <div className='App'>
+      <div className='header'>
+        <Header
+          filter={filter} 
+          setFilter={setFilter}
+          addTask={addTask}
+          setAddTask={setAddTask}/>
+      </div>
+      <div className='task'>
+        <Tasks
+          filter={filter}
+          taskList={taskList}
+          setTaskList={setTaskList}
+          setEditTask={setEditTask}
+          setAddTask={setAddTask}
+          setTaskIndex={setTaskIndex}
+          updatedEditTask={updatedEditTask} />
+      </div>
+      <div>
+        {addTask && 
+        <NewTask 
+          addTask={addTask}
+          setAddTask={setAddTask}
+          taskList={taskList}
+          setTaskList={setTaskList}
+          />
+        }
+        {editTask && 
+        <EditTask
+          taskList={taskList}
+          setTaskList={setTaskList}
+          taskIndex={taskIndex}
+          setEditTask={setEditTask}
+          setUpdatedEditTask={setUpdatedEditTask}/>
+        }
+      </div>
+    </div>
+  )
+}
